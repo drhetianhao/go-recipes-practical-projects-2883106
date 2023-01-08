@@ -29,7 +29,7 @@ func tsConvert(ts, from, to string) (string, error) {
 
 func main() {
 	ts := "2021-03-08T19:12"
-	out, err := tsConvert(ts, "America/Los_Angeles", "Asia/Jerusalem")
+	out, err := tsConvert(ts, "America/Los_Angeles", "Asia/Tokyo")
 	if err != nil {
 		fmt.Printf("error: %s", err)
 		return

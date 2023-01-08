@@ -28,12 +28,12 @@ func writeItems(fileName string, items []Item) error {
 	if err != nil {
 		return err
 	}
-	defer file.Close()
+	defer file.Close() // to close the file
 
 	row := []string{"sku", "name"}
 
 	wtr := csv.NewWriter(file)
-	defer wtr.Flush()
+	defer wtr.Flush() // defer the flush writer
 
 	if err := wtr.Write(row); err != nil {
 		return err

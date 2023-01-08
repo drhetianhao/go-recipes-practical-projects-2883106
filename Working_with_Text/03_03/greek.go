@@ -19,7 +19,7 @@ var letters = []Letter{
 // englishFor return the English name for a greek letter
 func englishFor(greek string) (string, error) {
 	for _, letter := range letters {
-		if strings.EqualFold(greek, letter.Symbol) {
+		if strings.EqualFold(greek, letter.Symbol) { // for UTF-8
 			return letter.English, nil
 		}
 	}

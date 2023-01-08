@@ -13,7 +13,7 @@ func main() {
 func median(nums []float64) float64 {
 	// Work on copy, don't change input slice
 	vals := make([]float64, len(nums))
-	copy(vals, nums)
+	copy(vals, nums) // func copy(dst []Type, src []Type) int
 	sort.Float64s(vals)
 
 	i := len(vals) / 2

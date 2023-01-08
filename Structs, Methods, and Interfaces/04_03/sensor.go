@@ -39,7 +39,7 @@ func (*Camera) Kind() string {
 	return "camera"
 }
 
-type Sensor interface {
+type Sensor interface { // Interface here
 	ID() string
 	Kind() string
 }

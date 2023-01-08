@@ -45,7 +45,7 @@ func cmdFreq(fileName string) (map[string]int, error) {
 }
 
 func main() {
-	freqs, err := cmdFreq("zsh_history")
+	freqs, err := cmdFreq("zsh_history") // need to set working directory
 	if err != nil {
 		log.Fatal(err)
 	}
