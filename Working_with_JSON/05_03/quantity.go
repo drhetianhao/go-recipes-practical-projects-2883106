@@ -16,7 +16,7 @@ type Quantity struct {
 // Example encoding: "42.195km"
 func (q *Quantity) MarshalJSON() ([]byte, error) {
 	if q.Unit == "" {
-		return nil, fmt.Errorf("empty  unit")
+		return nil, fmt.Errorf("empty unit")
 	}
 	text := fmt.Sprintf("%f%s", q.Value, q.Unit)
 	return json.Marshal(text)

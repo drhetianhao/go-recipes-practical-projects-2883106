@@ -28,17 +28,19 @@ func maxRideSpeed(r io.Reader) (float64, error) {
 		}
 
 		const timeFmt = "2006-01-02T15:04"
+		// get the start time
 		startTime, err := time.Parse(timeFmt, ride.StartTime)
 		if err != nil {
 			return 0, err
 		}
+		// get the end time
 		endTime, err := time.Parse(timeFmt, ride.EndTime)
 		if err != nil {
 			return 0, err
 		}
-		dt := endTime.Sub(startTime)
-		dtHour := float64(dt) / float64(time.Hour)
-		speed := ride.Distance / dtHour
+		dt := endTime.Sub(startTime) // find the Duration between the start and the end
+		dtHour := float64(dt) / float64(time.Hour) // convert into Hour
+		speed := ride.Distance / dtHour // calculate the speed
 		if speed > maxSpeed {
 			maxSpeed = speed
 		}
